@@ -16,7 +16,7 @@ A Neovim port of [Dim Night](https://github.com/lucas-barake/vscode-dim-night-th
 
 ```lua
 {
-  "valentindosimont/dim-night.nvim",
+  "MartianGreed/dim-night.nvim",
   lazy = false,
   priority = 1000,
   opts = {},
@@ -28,7 +28,7 @@ A Neovim port of [Dim Night](https://github.com/lucas-barake/vscode-dim-night-th
 ```lua
 return {
   {
-    "valentindosimont/dim-night.nvim",
+    "MartianGreed/dim-night.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
