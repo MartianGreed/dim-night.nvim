@@ -9,6 +9,7 @@ function M.get(c, config)
     DiagnosticInfo = { fg = c.purple },
     DiagnosticHint = { fg = c.cyan },
     DiagnosticOk = { fg = c.green_bright },
+    DiagnosticUnnecessary = { fg = c.gray_dark },
 
     DiagnosticVirtualTextError = { fg = c.red_error, bg = util.blend(c.red_error, c.bg, 0.1) },
     DiagnosticVirtualTextWarn = { fg = c.yellow, bg = util.blend(c.yellow, c.bg, 0.1) },
@@ -62,7 +63,7 @@ function M.get(c, config)
     ["@lsp.type.typeParameter"] = { fg = c.pink_type },
     ["@lsp.type.variable"] = { link = "@variable" },
 
-    ["@lsp.mod.deprecated"] = { strikethrough = true },
+    ["@lsp.mod.deprecated"] = { fg = c.gray_dark, strikethrough = true },
     ["@lsp.mod.readonly"] = {},
     ["@lsp.mod.defaultLibrary"] = {},
 

@@ -10,8 +10,8 @@ M.palette = {
   bg_popup = "#080808",
   bg_sidebar = "#060606",
   bg_statusline = "#060606",
-  bg_visual = "#3392FF44",
-  bg_search = "#ffd33d44",
+  bg_visual = "#152e4b",
+  bg_search = "#4b4018",
 
   fg = "#e5e5e5",
   fg_dark = "#d4d4d4",
@@ -20,7 +20,7 @@ M.palette = {
 
   border = "#080808",
 
-  comment = "#60e67d",
+  comment = "#7a7a7a",
 
   purple = "#BBB0FF",
   purple_dark = "#8b5cf6",
