@@ -46,6 +46,7 @@ return {
 
 ```lua
 require("dim-night").setup({
+  background = "light", -- "dark" or "light"
   transparent = false,
   terminal_colors = true,
   styles = {
@@ -70,6 +71,7 @@ require("dim-night").setup({
 
 | Option | Default | Description |
 |--------|---------|-------------|
+| `background` | `"light"` | Background variant: `"dark"` (darker) or `"light"` (default) |
 | `transparent` | `false` | Enable transparent background |
 | `terminal_colors` | `true` | Set terminal colors |
 | `styles` | `{}` | Style overrides for syntax groups |

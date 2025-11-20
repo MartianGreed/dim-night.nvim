@@ -138,6 +138,15 @@ function M.get(c, config)
     NoiceCmdlineIcon = { fg = c.purple },
 
     TroubleNormal = { fg = c.fg, bg = c.bg_sidebar },
+
+    SnacksNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+    SnacksNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+    SnacksDashboardNormal = { fg = c.fg, bg = c.bg },
+    SnacksNotifierBorder = { fg = c.border, bg = c.bg_popup },
+    SnacksNotifierInfo = { fg = c.purple },
+    SnacksNotifierWarn = { fg = c.yellow },
+    SnacksNotifierError = { fg = c.red_error },
+    SnacksNotifierDebug = { fg = c.gray },
   }
 end
 

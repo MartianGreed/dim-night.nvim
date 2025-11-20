@@ -11,12 +11,13 @@ function M.load()
 
   vim.g.colors_name = "dim-night"
   vim.o.termguicolors = true
-  vim.o.background = "dark"
 
   local config = require("dim-night.config").options
   if vim.tbl_isempty(config) then
     config = require("dim-night.config").defaults
   end
+
+  vim.o.background = config.background or "dark"
 
   local colors = require("dim-night.colors").setup(config)
   local theme = require("dim-night.theme").setup(colors, config)

@@ -1,85 +1,102 @@
 local M = {}
 
 M.palette = {
-  none = "NONE",
+	none = "NONE",
 
-  bg = "#0A0A0A",
-  bg_dark = "#060606",
-  bg_darker = "#060606",
-  bg_highlight = "#151515",
-  bg_popup = "#080808",
-  bg_sidebar = "#060606",
-  bg_statusline = "#060606",
-  bg_visual = "#152e4b",
-  bg_search = "#4b4018",
+	bg = "#1a1a1a",
+	bg_dark = "#1a1a1a",
+	bg_darker = "#1a1a1a",
+	bg_highlight = "#151515",
+	bg_popup = "#080808",
+	bg_sidebar = "#1a1a1a",
+	bg_statusline = "#1a1a1a",
+	bg_visual = "#152e4b",
+	bg_search = "#4b4018",
 
-  fg = "#e5e5e5",
-  fg_dark = "#d4d4d4",
-  fg_gutter = "#4d4d4d",
-  fg_sidebar = "#d1d5da",
+	fg = "#e5e5e5",
+	fg_dark = "#d4d4d4",
+	fg_gutter = "#4d4d4d",
+	fg_sidebar = "#d1d5da",
 
-  border = "#080808",
+	border = "#080808",
 
-  comment = "#7a7a7a",
+	comment = "#7a7a7a",
 
-  purple = "#BBB0FF",
-  purple_dark = "#8b5cf6",
-  purple_button = "#6d28d9",
+	purple = "#BBB0FF",
+	purple_dark = "#8b5cf6",
+	purple_button = "#6d28d9",
 
-  green = "#C8E997",
-  green_bright = "#34d058",
-  green_git = "#28a745",
+	green = "#C8E997",
+	green_bright = "#34d058",
+	green_git = "#28a745",
 
-  orange = "#FFA86B",
-  orange_dark = "#F78C6C",
+	orange = "#FFA86B",
+	orange_dark = "#F78C6C",
 
-  yellow = "#f8ca73",
-  yellow_bright = "#fdce75",
+	yellow = "#f8ca73",
+	yellow_bright = "#fdce75",
 
-  cyan = "#55D9C9",
-  cyan_dark = "#89DDFF",
-  cyan_bright = "#33D6EF",
-  cyan_match = "#17E5E6",
+	cyan = "#55D9C9",
+	cyan_dark = "#89DDFF",
+	cyan_bright = "#33D6EF",
+	cyan_match = "#17E5E6",
 
-  blue = "#8BB1FF",
-  blue_light = "#8AC5F0",
-  blue_bright = "#82BCFF",
-  blue_selection = "#3392FF",
-  blue_cursor = "#c8e1ff",
+	blue = "#8BB1FF",
+	blue_light = "#8AC5F0",
+	blue_bright = "#82BCFF",
+	blue_selection = "#3392FF",
+	blue_cursor = "#c8e1ff",
 
-  red = "#fe6767",
-  red_error = "#f87171",
-  red_bright = "#FF5370",
-  red_git = "#ea4a5a",
+	red = "#fe6767",
+	red_error = "#f87171",
+	red_bright = "#FF5370",
+	red_git = "#ea4a5a",
 
-  pink = "#f472b6",
-  pink_bright = "#ec4899",
-  pink_type = "#FF82C3",
+	pink = "#f472b6",
+	pink_bright = "#ec4899",
+	pink_type = "#FF82C3",
 
-  magenta = "#C792EA",
-  magenta_light = "#f6a9ff",
+	magenta = "#C792EA",
+	magenta_light = "#f6a9ff",
 
-  white = "#ffffff",
-  gray = "#9d9d9d",
-  gray_dark = "#7a7a7a",
-  gray_darker = "#353535",
+	white = "#ffffff",
+	gray = "#9d9d9d",
+	gray_dark = "#7a7a7a",
+	gray_darker = "#353535",
 }
 
 function M.setup(config)
-  local colors = vim.tbl_deep_extend("force", {}, M.palette)
+	local colors = vim.tbl_deep_extend("force", {}, M.palette)
 
-  if config.transparent then
-    colors.bg = "NONE"
-    colors.bg_sidebar = "NONE"
-    colors.bg_statusline = "NONE"
-    colors.bg_popup = "NONE"
-  end
+	if config.background == "dark" then
+		colors.bg = "#0A0A0A"
+		colors.bg_dark = "#060606"
+		colors.bg_darker = "#060606"
+		colors.bg_sidebar = "#060606"
+		colors.bg_statusline = "#060606"
+	elseif config.background == "light" then
+		colors.bg = "#1a1a1a"
+		colors.bg_dark = "#242424"
+		colors.bg_darker = "#2a2a2a"
+		colors.bg_sidebar = "#242424"
+		colors.bg_statusline = "#242424"
+		colors.bg_highlight = "#202020"
+		colors.bg_popup = "#1f1f1f"
+		colors.border = "#2a2a2a"
+	end
 
-  if config.on_colors then
-    config.on_colors(colors)
-  end
+	if config.transparent then
+		colors.bg = "NONE"
+		colors.bg_sidebar = "NONE"
+		colors.bg_statusline = "NONE"
+		colors.bg_popup = "NONE"
+	end
 
-  return colors
+	if config.on_colors then
+		config.on_colors(colors)
+	end
+
+	return colors
 end
 
 return M

@@ -3,6 +3,7 @@ local M = {}
 M.defaults = {
   transparent = false,
   terminal_colors = true,
+  background = "light",
   styles = {
     comments = { italic = true },
     keywords = {},
